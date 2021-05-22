@@ -1,5 +1,6 @@
 <?php
 require_once('connection.php');
+// add comment
 
 $controller = 'page';
 $action = 'home';
