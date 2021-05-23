@@ -11,4 +11,7 @@ class UserController extends BaseController
     {
         $this->render('view-usernam-password');
     }
+    public function register(){
+        $this->render('register');
+    }
 }
