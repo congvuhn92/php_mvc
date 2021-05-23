@@ -22,6 +22,7 @@ if (is_file($controllerFile)) {
         $controller->$action();
         return true;
     }
+    var_dump($controller);die();
 }
 include_once('controllers/PageController.php');
 $pageController = new PageController();

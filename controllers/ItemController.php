@@ -18,5 +18,3 @@ class ItemController extends BaseController{
         $this->render('show-item');
     }
 }
-    {
-}
