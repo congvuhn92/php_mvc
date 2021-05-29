@@ -2,6 +2,7 @@
 abstract class BaseController
 {
     protected $folder;
+    protected $model;
 
     // Hàm hiển thị kết quả ra cho người dùng.
     function render($file, $data = [])
