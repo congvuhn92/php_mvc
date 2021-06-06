@@ -17,6 +17,6 @@ class AnimalController extends BaseController
         } else {
             $animals = Animal::getAll();
         }
-        $this->render('list', ['animals' => $animals, 'keyword'=>$keyword]);
+        $this->render('list', ['animals' => $animals, 'keyword' => $keyword]);
     }
 }

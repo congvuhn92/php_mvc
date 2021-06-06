@@ -16,6 +16,7 @@
     }
 </style>
 <body>
+<a href="http://localhost/learnphp/php-mvc/index.php?controller=student&action=add">Create student</a>
 <form action="#" method="post">
     <input type="text" name="search" value="<?php echo $keyword ?>"><br>
     <button type="submit">Search</button>
@@ -28,6 +29,7 @@
         <th>Age</th>
         <th>Gender</th>
         <th>Score</th>
+        <th>Action</th>
     </tr>
     <?php foreach ($students as $student) { ?>
         <tr>
@@ -35,8 +37,12 @@
             <td><?php echo $student['last_name'] ?></td>
             <td><?php echo $student['address'] ?></td>
             <td><?php echo $student['age'] ?></td>
-            <td><?php echo $student['gender'] ?></td>
+            <td><?php echo $student['gender'] === 'male' ? 'Nam' : 'Nữ' ?></td>
             <td><?php echo $student['score'] ?></td>
+            <td>
+                <a href="http://localhost/learnphp/php-mvc/index.php?controller=student&action=edit&id=<?php echo $student['id'] ?>">Edit</a>&nbsp;&nbsp<a
+                        href="http://localhost/learnphp/php-mvc/index.php?controller=student&action=delete&id=<?php echo $student['id'] ?>">Delete</a>
+            </td>
         </tr>
     <?php } ?>
 </table>

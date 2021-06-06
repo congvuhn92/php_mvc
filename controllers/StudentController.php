@@ -23,4 +23,36 @@ class StudentController extends BaseController
         }
         $this->render('list', ['students' => $students, 'keyword' => $keyword]);
     }
+
+    public function add()
+    {
+        if (!empty($_POST)) {
+            Student::create($_POST);
+            return $this->listStudent();
+        }
+        $this->render('add-student');
+    }
+
+    public function edit()
+    {
+        $studentId = isset($_GET['id']) ? $_GET['id'] : 0;
+        if ($studentId == 0) {
+            return $this->listStudent();
+        }
+        $student = Student::getStudent($studentId);
+        if (!empty($_POST)) {
+            Student::update($studentId, $_POST);
+            return $this->listStudent();
+        }
+        $this->render('edit-student', ['student' => $student]);
+    }
+
+    public function delete()
+    {
+        $studentId = isset($_GET['id']) ? $_GET['id'] : 0;
+        if ($studentId != 0) {
+            Student::delete($studentId);
+        }
+        return $this->listStudent();
+    }
 }
